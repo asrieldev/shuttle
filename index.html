@@ -3,35 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CoGo Shuttle</title>
+    <title>CoGo Smart Shuttle</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <aside class="side">
-      <button class="brand" data-route="home" data-testid="brand-home">
-        <span class="brand-badge">CG</span>
-        <span>
-          <strong>CoGo Shuttle</strong>
-          <small>Ride operations</small>
-        </span>
+    <header class="topbar" id="topbar">
+      <button class="logo" data-route="home" aria-label="CoGo home">
+        <span class="logo-icon">↗</span>
+        <strong>CoGo</strong>
       </button>
-
-      <nav class="nav" aria-label="Main">
-        <button data-route="home" data-testid="nav-home">Home</button>
-        <button data-route="login" data-testid="nav-login">Login</button>
-        <button data-route="register" data-testid="nav-register">Register</button>
-        <button data-route="user" data-testid="nav-user">User dashboard</button>
-        <button data-route="driver" data-testid="nav-driver">Driver dashboard</button>
-        <button data-route="admin" data-testid="nav-admin">Admin panel</button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button data-route="home">Home</button>
+        <button data-route="rides">Rides</button>
+        <button data-route="about">About</button>
+        <button data-route="blog">Blog</button>
+        <button data-route="contact">Contact</button>
       </nav>
+      <div class="top-actions" id="topActions"></div>
+    </header>
 
-      <section class="session" id="sessionPanel"></section>
-    </aside>
-
-    <main class="main">
-      <div class="toast-stack" id="toastStack" aria-live="polite"></div>
-      <section id="app" class="screen" tabindex="-1"></section>
-    </main>
+    <main id="app" tabindex="-1"></main>
+    <div id="toastStack" class="toast-stack" aria-live="polite"></div>
 
     <script src="app.js"></script>
   </body>

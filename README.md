@@ -1,39 +1,62 @@
-# shuttle
+# CoGo Smart Shuttle
 
-CoGo Shuttle is a browser-based shuttle management demo. It implements the core
-flows from the reference diagram:
+CoGo is a smart shuttle management system for shared transportation across cars,
+bikes, mopeds, and buses. It supports open pickup/destination search, ride
+comparison, user booking, driver ride offers, simulated payments, notifications,
+and admin operations.
 
-- Login and registration for users, drivers, and admin access
-- User dashboard for booking rides, seeing ride status, paying fares, and reading notifications
-- Driver dashboard for profile details, saved address, open ride requests, accepted rides, and completion
-- Admin panel for riders, drivers, bookings, payment totals, and operational notifications
-- Local payment simulation and persistent notifications
-- GitHub Pages friendly deployment with no build step
+## Project Objectives
 
-## Run locally
+- Centralize multiple transport options in one digital platform.
+- Show vehicle availability, route details, estimated travel time, and fare.
+- Reduce travel delays and the need for multiple transport apps.
+- Provide a simple and secure interface for searching and booking rides.
+- Promote shared, cost-effective, and eco-friendly mobility.
 
-Open `index.html` in a browser.
+## Scope
+
+- Daily transportation for students and office employees
+- Local city travel and short-distance commuting
+- Shared and eco-friendly transport support
+- Smart city and campus transport systems
+- Future tourism and public transport management
+
+## Run Static Frontend
+
+Open `index.html` in a browser. This mode works on GitHub Pages and uses
+`localStorage` as a fallback data store.
 
 Demo admin login:
 
 - Email: `admin@cogo.test`
 - Password: `admin123`
 
-All data is stored in browser `localStorage`, so refreshes keep users, drivers,
-bookings, payments, and notifications.
+## Run Full Backend App
 
-## Deployment
+1. Install dependencies:
 
-This project is static and can deploy directly to GitHub Pages:
+```bash
+npm install
+```
 
-1. Push the repository to GitHub.
-2. Open the repository settings.
-3. Go to Pages.
-4. Select the `main` branch and root folder.
-5. Save and wait for the Pages URL.
+2. Copy `.env.example` to `.env`.
+3. Add your MongoDB URI and secrets to `.env`.
+4. Start the server:
 
-## Current limitation
+```bash
+npm start
+```
 
-The app is fully usable as a static prototype, but it does not yet use a real
-backend database, real JWT sessions, payment gateway, email/SMS service, or
-server-side admin security. Those are the next steps for production.
+5. Open:
+
+```text
+http://localhost:5000
+```
+
+The Express backend provides MongoDB-backed auth, rides, bookings, payments,
+notifications, and admin overview APIs.
+
+## Security Note
+
+Never commit `.env` or real credentials. This repo ignores `.env` files and only
+commits `.env.example` placeholders.
